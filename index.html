@@ -127,6 +127,23 @@
   .pub li{margin:6px 0}
   .isbn-badge{display:inline-block;background:#fff;border:1px solid var(--gold-soft);color:var(--navy);font-weight:800;padding:8px 14px;border-radius:12px;margin:0 0 16px;letter-spacing:.02em}
 
+
+  /* ---------- harga menarik perhatian ---------- */
+  .price.price-hot{display:block;position:relative;background:#fff;border:2px solid var(--gold);border-radius:18px;padding:14px 22px 12px;animation:pulseGlow 1.8s ease-in-out infinite}
+  .tag-hot{display:inline-block;background:linear-gradient(135deg,#e0b13f,#b8861b);color:#2a1d00;font-weight:800;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:8px;animation:softBlink 1.8s ease-in-out infinite}
+  .price-line{display:flex;align-items:baseline;gap:14px}
+  .price-line strong{font-size:2.7rem;line-height:1;color:var(--navy)}
+  .price-line s{color:#8a94a6;font-size:1.15rem;text-decoration-thickness:2px}
+  .price.price-hot small{display:block;margin-top:4px}
+  .tag-hot-dark{margin-bottom:0}
+  .order .price-big{animation:priceGlow 1.8s ease-in-out infinite}
+  .order .fine s{color:#9db0cf}
+  .sticky .p{animation:softBlink 1.8s ease-in-out infinite}
+  @keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(184,134,27,.55);transform:scale(1)}50%{box-shadow:0 0 0 14px rgba(184,134,27,0);transform:scale(1.03)}}
+  @keyframes softBlink{0%,100%{opacity:1}50%{opacity:.4}}
+  @keyframes priceGlow{0%,100%{opacity:1;text-shadow:0 0 0 rgba(243,220,160,0)}50%{opacity:.8;text-shadow:0 0 26px rgba(243,220,160,.85)}}
+  @media (prefers-reduced-motion:reduce){.price.price-hot,.tag-hot,.order .price-big,.sticky .p{animation:none!important}}
+
   /* ---------- order ---------- */
   .order{background:linear-gradient(135deg,var(--navy-deep),var(--navy));color:#fff;text-align:center}
   .order h2{color:#fff}
@@ -185,7 +202,7 @@
         <p class="sub">Soalan panel, jawapan saya dan analisa</p>
         <p class="lead">Rakaman jujur sebuah temuduga Pegawai Tadbir dan Diplomatik (PTD): apa yang ditanya panel, bagaimana saya menjawab, dan mengapa jawapan itu berkesan atau boleh diperbaiki.</p>
         <div class="price-row">
-          <div class="price"><strong>RM&nbsp;50</strong><small>harga tempahan awal &middot; harga biasa RM&nbsp;59.99<br>e-buku &middot; 48 halaman</small></div>
+          <div class="price price-hot"><span class="tag-hot">Harga tempahan awal</span><div class="price-line"><strong>RM&nbsp;50</strong><s aria-label="harga biasa RM 59.99">RM&nbsp;59.99</s></div><small>e-buku &middot; 48 halaman</small></div>
           <a class="btn gold js-order" href="#tempah">Tempah sekarang</a>
           <a class="btn ghost" href="#isi">Lihat isi buku</a>
         </div>
@@ -296,8 +313,9 @@
     <div class="wrap">
       <div class="kicker" style="color:var(--gold-soft);font-weight:800;letter-spacing:.16em;font-size:.78rem;text-transform:uppercase">Tempahan e-buku</div>
       <h2>Dapatkan e-buku anda</h2>
+      <div class="tag-hot tag-hot-dark">Harga tempahan awal</div>
       <div class="price-big">RM&nbsp;50</div>
-      <p class="fine" style="margin-top:0">Harga tempahan awal. Harga biasa RM&nbsp;59.99.</p>
+      <p class="fine" style="margin-top:0">Harga biasa <s>RM&nbsp;59.99</s></p>
       <p>E-buku digital, 48 halaman, saiz A5. Tempahan dibuat melalui borang: bayar melalui QR bank, lampirkan resit, dan e-buku (PDF dilindungi kata laluan) dihantar ke e-mel anda selepas bayaran disemak.</p>
       <p style="margin-top:22px"><a class="btn gold js-order" id="order-main" href="#tempah">Tempah sekarang</a></p>
       <p class="fine" id="order-note"></p>
